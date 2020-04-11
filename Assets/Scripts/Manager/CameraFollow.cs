@@ -12,7 +12,6 @@ public class CameraFollow : MonoBehaviour
     public float maximumFollowSpeed;
     public Transform player;
 
-    // Update is called once per frame
     void Update()
     {
         targetPosition = player.position - new Vector3(0, 0, 10);

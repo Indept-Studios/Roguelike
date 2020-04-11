@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.unity-broadcast.unity-broadcast-core": "https://github.com/unity-broadcast/unity-broadcast-core.git",
+    "com.unity-broadcast.unity-broadcast-events": "https://github.com/unity-broadcast/unity-broadcast-events.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.collab-proxy": "1.2.16",
@@ -40,5 +42,15 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "com.unity-broadcast.unity-broadcast-core": {
+      "revision": "HEAD",
+      "hash": "0e9dfaa1c1a28f12a8d88b53c6330f4c07bc8529"
+    },
+    "com.unity-broadcast.unity-broadcast-events": {
+      "revision": "HEAD",
+      "hash": "e1794b38777b8ae4985c621300054278b759449c"
+    }
   }
 }

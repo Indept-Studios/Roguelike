@@ -7,7 +7,7 @@ public class FirePointDirection : MonoBehaviour, ILooktoPoint
     private Rigidbody2D attachedGameobject;
 
     private Vector3 mousePosition;
-    private Vector2 lookDirection;
+    public Vector2 lookDirection;
 
     private void Start()
     {
@@ -17,7 +17,6 @@ public class FirePointDirection : MonoBehaviour, ILooktoPoint
 
     void FixedUpdate()
     {
-        
         LookAt();
     }
 

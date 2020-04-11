@@ -26,10 +26,9 @@ public class Raycast : MonoBehaviour
         RaycastHit raycastHit;
 
         Ray ray = _RaycastCamera.ScreenPointToRay(Input.mousePosition);
-        
+
         if (Physics.Raycast(ray, out raycastHit, _RaycastRange))
         {
-            Debug.Log("RayCast Testing");
             //Raycast hit a target
             GameObject newTarget = raycastHit.collider.gameObject;
 

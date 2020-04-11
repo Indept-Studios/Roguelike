@@ -1,0 +1,6 @@
+﻿
+
+
+#1 Spieler muss über Gegner laufen können (Layer) 
+#2 Schüsse müssen über Background Layer liegen aber unter Enemys
+#3 Player wackelt beim Move() 
