@@ -8,17 +8,16 @@ public class WorldMap : MonoBehaviour
     [SerializeField] private int height = 100;
     [SerializeField] private int width = 100;
     [SerializeField] Sprite grassSpriteOriginal;
-
+    
     GameObject tile_go;
     SpriteRenderer tile_sr;
 
-    // Start is called before the first frame update
     void Start()
     {
         WorldGeneration();
     }
 
-    private void WorldGeneration()
+    void WorldGeneration()
     {
         for (int x = 0; x < width; x++)
         {
@@ -33,11 +32,5 @@ public class WorldMap : MonoBehaviour
                 tile_sr.sprite = grassSpriteOriginal;
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

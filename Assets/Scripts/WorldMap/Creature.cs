@@ -2,14 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(SpriteRenderer))]
-
-public abstract class Creature : MonoBehaviour
+public class Creature : MonoBehaviour
 {
-    protected Vector2 lookDirection;
-    protected Rigidbody2D rb2d;
+    private Vector3 mousePosition;
+    private Vector2 lookDirection;
 
-    
+    private Rigidbody2D go_rb2d;
+    private BoxCollider2D go_BoxCollider;
+
+    [SerializeField] private bool isPlayerControlled = false;
+
+    void Start()
+    {
+        go_rb2d = new Rigidbody2D();
+        go_BoxCollider = new BoxCollider2D();
+    }
+    void Update()
+    {
+        if (!isPlayerControlled)
+        {
+            NPCLookAt();
+        }
+        else
+        {
+            PlayerLookAt();
+        }
+    }
+
+    void PlayerLookAt()
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        lookDirection = mousePosition - transform.position;
+        transform.rotation = Quaternion.Euler(new Vector3(lookDirection.x, lookDirection.y));
+    }
+    void NPCLookAt()
+    {
+        //some LookAt code
+    }
 }

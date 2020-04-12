@@ -18,7 +18,7 @@ public class CreatureController : MonoBehaviour
     {
         
     }
-    public void prefabCreation()
+    void prefabCreation()
     {
         for (int i = 0; i < prefabPool.Length; i++)
         {
