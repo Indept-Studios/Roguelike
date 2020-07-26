@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float destroyAfterSeconds = .5f;
     [SerializeField] private float go_Bulle_Speed = 10f;
     [SerializeField] private bool isPlayerControlled = false;
+    [SerializeField] private float damagePerHit = -10f;
 
     private Vector3 mousePosition;
     private Vector2 shootDirection;
@@ -16,6 +17,8 @@ public class Shooting : MonoBehaviour
     private GameObject bullet;
     private Rigidbody2D bullet_rb2d;
 
+    public float DamagePerHit { get => damagePerHit; set => damagePerHit = value; }
+
     void Start()
     {
         FirePointInstantiation();
@@ -24,9 +27,16 @@ public class Shooting : MonoBehaviour
     void Update()
     {
         LookAtShootPoint();
-        if (Input.GetMouseButtonDown(0))
+        if (!isPlayerControlled)
         {
-            PlayerShoot();
+            NPCShoot();
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                PlayerShoot();
+            }
         }
     }
 
@@ -59,6 +69,6 @@ public class Shooting : MonoBehaviour
 
     void NPCShoot()
     {
-
+        //some code here
     }
 }

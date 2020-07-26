@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
+
 public class Creature : MonoBehaviour
 {
     private Vector3 mousePosition;
@@ -12,10 +15,21 @@ public class Creature : MonoBehaviour
 
     [SerializeField] private bool isPlayerControlled = false;
 
+
+    private void Awake()
+    {
+        go_rb2d = GetComponent<Rigidbody2D>();
+        go_BoxCollider = GetComponent<BoxCollider2D>();
+        go_rb2d.gravityScale = 0;
+        go_rb2d.freezeRotation = true;
+    }
+
     void Start()
     {
-        go_rb2d = new Rigidbody2D();
-        go_BoxCollider = new BoxCollider2D();
+        if (isPlayerControlled)
+        {
+            go_BoxCollider.isTrigger = true;
+        }
     }
     void Update()
     {

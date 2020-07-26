@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Raycast : MonoBehaviour
 {
@@ -23,11 +24,13 @@ public class Raycast : MonoBehaviour
 
     private void CheckRaycastHit()
     {
-        RaycastHit raycastHit;
+        RaycastHit raycastHit=new RaycastHit();
 
         Ray ray = _RaycastCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out raycastHit, _RaycastRange))
+        
+
+        if (Physics2D.Raycast(Input.mousePosition, Vector2.down, _RaycastRange))
         {
             //Raycast hit a target
             GameObject newTarget = raycastHit.collider.gameObject;

@@ -39,6 +39,7 @@ public class Movement : MonoBehaviour
         movementInput = new Vector2(horizontalInput, verticalInput);
         go_rb2d.velocity = movementInput.normalized * moveSpeed;
     }
+
     void NPCMovement()
     {
         horizontalInput = Random.Range(-1, 2);

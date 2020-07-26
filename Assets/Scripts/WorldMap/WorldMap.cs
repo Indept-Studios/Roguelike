@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class WorldMap : MonoBehaviour
 {
-    [SerializeField] private int height = 100;
-    [SerializeField] private int width = 100;
+    [SerializeField] private int height = 10;
+    [SerializeField] private int width = 10;
     [SerializeField] Sprite grassSpriteOriginal;
     
     GameObject tile_go;
